@@ -1,0 +1,104 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated WALLX user profile synced after Google Sign-In.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the signed-in user."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User's display name from Google Sign-In (1-100 chars)."
+        },
+        "email": {
+          "type": "string",
+          "format": "email",
+          "description": "Optional user email address (PII, owner-only read)."
+        },
+        "photoUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Optional Google profile avatar URL."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Immutable server timestamp set via FieldValue.serverTimestamp() on profile creation."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp updated via FieldValue.serverTimestamp() on sign-in or profile sync."
+        }
+      },
+      "required": [
+        "userId",
+        "displayName",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "AppRelease": {
+      "title": "AppRelease",
+      "description": "Latest WALLX app release metadata published by the app owner for live in-app update checks.",
+      "type": "object",
+      "properties": {
+        "versionCode": {
+          "type": "integer",
+          "description": "Monotonic Android versionCode (1-100000) compared against BuildConfig.VERSION_CODE."
+        },
+        "versionName": {
+          "type": "string",
+          "description": "Human-readable release version string (1-32 chars, e.g. 1.1)."
+        },
+        "releaseNotes": {
+          "type": "string",
+          "description": "Summary of what is new in this release (1-500 chars)."
+        },
+        "downloadUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Optional HTTPS update download or store URL (up to 2048 chars)."
+        },
+        "forceUpdate": {
+          "type": "boolean",
+          "description": "Whether the update prompt requires updating before continuing."
+        },
+        "updatedBy": {
+          "type": "string",
+          "description": "Firebase Auth UID of the app owner who published this release."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp set via FieldValue.serverTimestamp() when published."
+        }
+      },
+      "required": [
+        "versionCode",
+        "versionName",
+        "releaseNotes",
+        "forceUpdate",
+        "updatedBy",
+        "updatedAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Owner-isolated user profile documents containing display name, avatar URL, and email PII."
+    },
+    "/app_config/{docId}": {
+      "schema": {
+        "$ref": "#/entities/AppRelease"
+      },
+      "description": "App-wide release configuration (docId: latest_release) readable by signed-in users and writable strictly by the verified app owner."
+    }
+  }
+}

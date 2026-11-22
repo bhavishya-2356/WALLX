@@ -1,0 +1,210 @@
+<resources>
+    <string name="app_name">WALLX</string>
+
+    <!-- Intro Animation -->
+    <string name="intro_quality_tag">8K</string>
+    <string name="intro_wallpaper_name">WALLX WALLPAPER</string>
+
+    <!-- Auth Screen -->
+    <string name="auth_headline">Welcome to WALLX</string>
+    <string name="auth_subtitle">Sign in with Google to personalize your 8K wallpaper experience and display your profile in Settings.</string>
+    <string name="action_sign_in_google">Continue with Google</string>
+    <string name="auth_signing_in">Signing in…</string>
+    <string name="auth_error_cancelled">Sign-in was cancelled. Tap below to try again.</string>
+    <string name="auth_error_no_account">No Google account found on this device. Please add a Google account in device Settings.</string>
+    <string name="auth_error_generic">Unable to sign in right now. Please try again.</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="profile_signed_in_badge">SIGNED IN</string>
+    <string name="profile_default_name">WALLX Member</string>
+
+    <!-- Navigation -->
+    <string name="nav_vault">Wallpapers</string>
+    <string name="nav_favorites">Favorites</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Vault Screen -->
+    <string name="vault_logo_subtitle">8K WALLPAPER PREMIUM</string>
+    <string name="vault_empty_title">Your Canvas Awaits</string>
+    <string name="vault_empty_message">Add your own photos anytime to build your personal 8K wallpaper collection.</string>
+    <string name="vault_empty_message_viewer">New 8K wallpapers curated by the owner will appear here soon.</string>
+    <string name="vault_empty_visitor_title">Collection Updating</string>
+    <string name="vault_empty_visitor_message">New curated 8K wallpapers added by the owner will appear here.</string>
+    <string name="action_add_wallpapers">Add My Wallpapers</string>
+    <string name="action_add_short">Add</string>
+    <string name="search_wallpapers_hint">Search wallpapers…</string>
+    <string name="filter_all">All</string>
+    <string name="count_wallpapers_singular">%1$d wallpaper</string>
+    <string name="count_wallpapers_plural">%1$d wallpapers</string>
+    <string name="importing_wallpapers">Adding your wallpapers…</string>
+    <string name="imported_single">Added 1 wallpaper to WALLX</string>
+    <string name="imported_multiple">Added %1$d wallpapers to WALLX</string>
+    <string name="import_failed">Could not import selected photo</string>
+    <string name="no_search_results_title">No matching wallpapers</string>
+    <string name="no_search_results_body">Try a different title or clear your search filter.</string>
+    <string name="action_clear_search">Clear search</string>
+    <string name="vault_collections_section">COLLECTIONS</string>
+    <string name="pack_bag_badge">1 COLLECTION</string>
+    <string name="pack_bag_title">iPhone 16 Pro Pack</string>
+    <string name="pack_bag_short_title">iPhone 16 Pro</string>
+    <string name="pack_porsche_title">CAR WALLPAPER</string>
+    <string name="pack_custom_title">My Wallpapers</string>
+    <string name="pack_bag_short_count_plural">%1$d wallpapers</string>
+    <string name="pack_bag_short_count_singular">1 wallpaper</string>
+    <string name="pack_bag_subtitle_plural">%1$d Wallpapers · 8K OLED</string>
+    <string name="pack_bag_subtitle_singular">1 Wallpaper · 8K OLED</string>
+    <string name="action_open_collection">Open Collection</string>
+    <string name="cd_open_pack_bag">Open iPhone 16 Pro wallpaper collection</string>
+
+    <!-- Favorites Screen -->
+    <string name="favorites_title">Favorites</string>
+    <string name="favorites_subtitle">Your hand-picked 8K highlights</string>
+    <string name="favorites_empty_title">No Favorites Yet</string>
+    <string name="favorites_empty_message">Tap the heart on any wallpaper to keep your favorites one tap away.</string>
+    <string name="action_go_to_vault">Browse Wallpapers</string>
+
+    <!-- Preview & Apply Screen -->
+    <string name="preview_swipe_hint">Swipe down or up for next wallpaper</string>
+    <string name="action_set_wallpaper">Set Wallpaper</string>
+    <string name="action_set_phone_screen">Phone Screen</string>
+    <string name="set_wallpaper_sheet_title">Set Wallpaper</string>
+    <string name="set_wallpaper_sheet_subtitle">Choose how to apply this 8K wallpaper</string>
+    <string name="apply_option_home_title">Home Screen</string>
+    <string name="apply_option_home_subtitle">Apply directly to your home screen</string>
+    <string name="apply_option_lock_title">Lock Screen</string>
+    <string name="apply_option_lock_subtitle">Opens your phone\'s real lock screen</string>
+    <string name="apply_option_both_title">Home &amp; Lock Screen</string>
+    <string name="apply_option_both_subtitle">Apply to both home &amp; lock screen</string>
+    <string name="applying_wallpaper">Applying…</string>
+    <string name="cd_app_profile_logo">WALLX app profile logo</string>
+    <string name="wallpaper_applied_phone_screen">Wallpaper applied to your phone screen</string>
+    <string name="wallpaper_applied_home">Wallpaper applied to Home Screen</string>
+    <string name="wallpaper_applied_lock">Wallpaper applied to Lock Screen</string>
+    <string name="wallpaper_applied_both">Wallpaper applied to Home &amp; Lock Screen</string>
+    <string name="wallpaper_apply_failed">Unable to set wallpaper on this device</string>
+
+    <!-- Edit & Delete -->
+    <string name="edit_sheet_title">Wallpaper Details</string>
+    <string name="field_title_label">Wallpaper Name</string>
+    <string name="field_tag_label">Collection Tag (optional)</string>
+    <string name="field_tag_hint">e.g. 8K, Minimal, Nature</string>
+    <string name="detail_resolution">Quality</string>
+    <string name="detail_file_size">File Size</string>
+    <string name="detail_added_date">Added</string>
+    <string name="action_save">Save Changes</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="delete_dialog_title">Remove Wallpaper?</string>
+    <string name="delete_dialog_message">This removes the wallpaper from WALLX. Your original gallery photo stays untouched.</string>
+    <string name="wallpaper_deleted">Removed from WALLX</string>
+    <string name="wallpaper_updated">Wallpaper details updated</string>
+
+    <!-- Settings Screen -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_section_account">ACCOUNT</string>
+    <string name="settings_section_appearance">APPEARANCE</string>
+    <string name="settings_appearance_title">App Theme</string>
+    <string name="settings_appearance_subtitle">Swipe or tap Liquid Glass to switch Silver &amp; Dark Mode</string>
+    <string name="settings_light_mode">Silver Mode</string>
+    <string name="settings_dark_mode">Dark Mode</string>
+    <string name="settings_section_notifications">NOTIFICATIONS</string>
+    <string name="settings_section_updates">APP UPDATES</string>
+    <string name="settings_section_community">SUPPORT &amp; SHARE</string>
+    <string name="settings_section_info">INFORMATION</string>
+    <string name="settings_notifications_title">Account Notifications</string>
+    <string name="settings_notifications_on">On · Receive new wallpaper &amp; account alerts</string>
+    <string name="settings_notifications_off">Off · Notifications are muted</string>
+    <string name="notifications_turned_on">Account notifications turned ON</string>
+    <string name="notifications_turned_off">Account notifications turned OFF</string>
+    <string name="notifications_permission_denied">Allow notification permission in device Settings to turn alerts on.</string>
+
+    <string name="settings_rate_app_title">Rate App</string>
+    <string name="settings_rate_app_subtitle">Tap to rate WALLX with 5 stars (one time)</string>
+    <string name="settings_rate_app_rated">Rated %1$d / 5 stars · Thank you!</string>
+    <string name="settings_rate_done_badge">RATED</string>
+    <string name="rate_dialog_title">Rate WALLX</string>
+    <string name="rate_dialog_subtitle">Tap a star to choose your rating</string>
+    <string name="rate_dialog_already_title">Thanks for Rating!</string>
+    <string name="rate_dialog_already_subtitle">You rated WALLX %1$d out of 5 stars. Ratings are submitted once.</string>
+    <string name="action_done">Done</string>
+    <string name="rate_mood_prompt">Choose 1 to 5 stars</string>
+    <string name="rate_mood_1">Needs Work</string>
+    <string name="rate_mood_2">Fair</string>
+    <string name="rate_mood_3">Good</string>
+    <string name="rate_mood_4">Great!</string>
+    <string name="rate_mood_5">Awesome 5 Stars!</string>
+    <string name="action_submit_rating">Submit Rating</string>
+    <string name="rate_app_thank_you">Thanks for rating WALLX %1$d stars!</string>
+
+    <string name="settings_share_app_title">Share App</string>
+    <string name="settings_share_app_subtitle">Share WALLX link with friends &amp; family</string>
+    <string name="share_app_subject">WALLX — 8K Premium Wallpapers</string>
+    <string name="share_app_text">Check out WALLX — 8K Premium Wallpapers in a sleek Liquid Glass design!\n\nOpen WALLX App:\nhttps://ais-pre-2edqby7sawk7a4cverl35j-110202586544.asia-east1.run.app</string>
+    <string name="share_app_chooser_title">Share WALLX</string>
+
+    <string name="settings_section_about">About Us</string>
+    <string name="about_us_subtitle">Owner details &amp; app version</string>
+    <string name="about_us_tagline">Curated 8K wallpapers crafted for ultra-smooth OLED performance.</string>
+    <string name="owner_badge">APP OWNER</string>
+    <string name="owner_name">Panchal Bhavishya</string>
+    <string name="owner_role">Owner &amp; Creator of WALLX</string>
+    <string name="about_version_label">APP VERSION</string>
+    <string name="about_version_value">Version %1$s</string>
+    <string name="about_app_version">WALLX · 8K Wallpaper Premium</string>
+    <string name="vault_cleared">All wallpapers cleared</string>
+
+    <!-- App Updates -->
+    <string name="settings_check_update_title">Check for Updates</string>
+    <string name="settings_check_update_current">Up to date · Version %1$s</string>
+    <string name="settings_check_update_available">Update v%1$s available! Tap to update</string>
+    <string name="settings_checking_updates">Checking for latest version…</string>
+    <string name="settings_update_badge_new">NEW</string>
+    <string name="settings_publish_update_title">Publish App Update</string>
+    <string name="settings_publish_update_subtitle">Owner only · Push a new update to all users</string>
+    <string name="update_dialog_title">New Update Available</string>
+    <string name="update_dialog_version_jump">v%1$s  →  v%2$s</string>
+    <string name="update_dialog_whats_new">What\'s New</string>
+    <string name="update_dialog_required_note">This update is required to keep using WALLX smoothly.</string>
+    <string name="action_update_now">Update Now</string>
+    <string name="action_update_later">Later</string>
+    <string name="update_up_to_date_msg">You\'re on the latest version (v%1$s)</string>
+    <string name="update_found_msg">WALLX v%1$s is available now!</string>
+    <string name="update_link_unavailable">Update v%1$s is ready! Download link will be shared by the owner shortly.</string>
+    <string name="publish_update_title">Publish App Update</string>
+    <string name="publish_update_subtitle">Users will automatically see this update when they open WALLX or tap Check for Updates.</string>
+    <string name="publish_version_name_label">New Version Name (e.g. 1.1)</string>
+    <string name="publish_version_code_label">Version Code (must be &gt; %1$d)</string>
+    <string name="publish_notes_label">What\'s New / Release Notes</string>
+    <string name="publish_notes_placeholder">Faster scrolling, new 8K wallpapers &amp; smoother UI…</string>
+    <string name="publish_url_label">Download Link (Optional HTTPS URL)</string>
+    <string name="publish_url_placeholder">https://…</string>
+    <string name="publish_force_label">Require Update (hide Later button)</string>
+    <string name="action_publish_update">Publish Update</string>
+    <string name="publishing_update">Publishing…</string>
+    <string name="publish_update_success">Update v%1$s published to all users!</string>
+    <string name="publish_validation_version_code">Enter a version code higher than %1$d</string>
+    <string name="publish_validation_version_name">Enter a version name (e.g. 1.1)</string>
+    <string name="publish_validation_notes">Enter short release notes for users</string>
+    <string name="publish_validation_url">Download link must start with https:// or http://</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_back">Go back</string>
+    <string name="cd_add_wallpaper">Add your own wallpaper</string>
+    <string name="cd_search">Search wallpapers</string>
+    <string name="cd_close_search">Close search</string>
+    <string name="cd_toggle_layout">Switch gallery layout</string>
+    <string name="cd_favorite_add">Add to favorites</string>
+    <string name="cd_favorite_remove">Remove from favorites</string>
+    <string name="cd_edit_details">Edit wallpaper details</string>
+    <string name="cd_delete_wallpaper">Delete wallpaper</string>
+    <string name="cd_empty_illustration">Empty wallpaper vault illustration</string>
+    <string name="cd_wallpaper_image">Wallpaper %1$s</string>
+    <string name="cd_reset_zoom">Reset zoom</string>
+    <string name="cd_profile_avatar">Signed in user profile picture</string>
+    <string name="cd_sign_out">Sign out of your Google account</string>
+    <string name="cd_rate_star">Rate %1$d out of 5 stars</string>
+    <string name="cd_open_about_us">Open About Us</string>
+    <string name="cd_share_app">Share WALLX app</string>
+    <string name="cd_owner_profile_logo">Owner profile logo</string>
+    <string name="cd_check_updates">Check for WALLX updates</string>
+    <string name="cd_publish_update">Publish new WALLX update</string>
+</resources>

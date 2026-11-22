@@ -1,0 +1,109 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Global safety net: default-deny all unspecified paths
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Hardened global primitives
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAppOwner() {
+      return isSignedIn() &&
+             request.auth.token.email == 'panchalrahul18827@gmail.com' &&
+             request.auth.token.email_verified == true;
+    }
+
+    // Standalone schema validation blueprint for UserProfile
+    function isValidUserProfile(data) {
+      return data.userId is string &&
+             data.userId == request.auth.uid &&
+             isValidId(data.userId) &&
+             data.displayName is string &&
+             data.displayName.size() >= 1 &&
+             data.displayName.size() <= 100 &&
+             (!('email' in data) || data.email == null || (data.email is string && data.email.size() <= 254)) &&
+             (!('photoUrl' in data) || data.photoUrl == null || (data.photoUrl is string && data.photoUrl.size() <= 2048)) &&
+             data.createdAt is timestamp &&
+             data.createdAt <= request.time &&
+             data.updatedAt is timestamp &&
+             data.updatedAt <= request.time;
+    }
+
+    // Standalone schema validation blueprint for AppRelease
+    function isValidAppRelease(data) {
+      return data.versionCode is int &&
+             data.versionCode >= 1 &&
+             data.versionCode <= 100000 &&
+             data.versionName is string &&
+             data.versionName.size() >= 1 &&
+             data.versionName.size() <= 32 &&
+             data.releaseNotes is string &&
+             data.releaseNotes.size() >= 1 &&
+             data.releaseNotes.size() <= 500 &&
+             (!('downloadUrl' in data) || data.downloadUrl == null || (data.downloadUrl is string && data.downloadUrl.size() <= 2048)) &&
+             data.forceUpdate is bool &&
+             data.updatedBy is string &&
+             data.updatedBy == request.auth.uid &&
+             isValidId(data.updatedBy) &&
+             data.updatedAt is timestamp &&
+             data.updatedAt <= request.time;
+    }
+
+    // Owner-isolated user profiles (contains email PII; list disabled)
+    match /users/{userId} {
+      allow get: if isOwner(userId) && isValidId(userId);
+      allow list: if false;
+
+      allow create: if isOwner(userId) &&
+                       isValidId(userId) &&
+                       incoming().keys().hasAll(['userId', 'displayName', 'createdAt', 'updatedAt']) &&
+                       incoming().keys().hasOnly(['userId', 'displayName', 'email', 'photoUrl', 'createdAt', 'updatedAt']) &&
+                       isValidUserProfile(incoming());
+
+      allow update: if isSignedIn() &&
+                       isValidUserProfile(incoming()) &&
+                       isOwner(userId) &&
+                       isValidId(userId) &&
+                       incoming().userId == existing().userId &&
+                       incoming().createdAt == existing().createdAt &&
+                       incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'email', 'photoUrl', 'updatedAt']);
+
+      allow delete: if isOwner(userId) && isValidId(userId);
+    }
+
+    // App-wide release metadata: all signed-in users can check latest_release; only verified owner can publish updates
+    match /app_config/{docId} {
+      allow get: if isSignedIn() && docId == 'latest_release';
+      allow list: if false;
+
+      allow create, update: if isAppOwner() &&
+                               docId == 'latest_release' &&
+                               incoming().keys().hasAll(['versionCode', 'versionName', 'releaseNotes', 'forceUpdate', 'updatedBy', 'updatedAt']) &&
+                               incoming().keys().hasOnly(['versionCode', 'versionName', 'releaseNotes', 'downloadUrl', 'forceUpdate', 'updatedBy', 'updatedAt']) &&
+                               isValidAppRelease(incoming());
+
+      allow delete: if false;
+    }
+  }
+}

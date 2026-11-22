@@ -1,0 +1,6 @@
+{
+  "name": "WALLX",
+  "description": "A clean white and mint green personal wallpaper vault app where you store, preview, and apply your own wallpapers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
